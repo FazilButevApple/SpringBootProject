@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import tr.com.fazil.exceptions.CustomResponse;
 import tr.com.fazil.data.dto.PersonelDto;
@@ -18,6 +19,7 @@ import java.util.Objects;
 @RestController
 @RequestMapping("/personels")
 @RequiredArgsConstructor
+@PreAuthorize("hasAnyAuthority('USER')")
 public class PersonelController {
 
     private final PersonelService personelService;
@@ -25,11 +27,8 @@ public class PersonelController {
 
     @PostMapping
     public CustomResponse<PersonelDto> createUserNormal(@Valid @RequestBody PersonelDto personelDto) {
-
             PersonelDto createdPersonel = personelService.createPersonel(personelDto);
             return new CustomResponse<>("Personel başarıyla oluşturuldu.", "SUCCESS_200", createdPersonel);
-
-
     }
 
     @PostMapping("/sequence")

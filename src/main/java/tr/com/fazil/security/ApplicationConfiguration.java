@@ -1,4 +1,4 @@
-package tr.com.fazil.helper.jwt;
+package tr.com.fazil.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import tr.com.fazil.repository.KullaniciRepository;
+
+import java.util.UUID;
 
 @Configuration
 public class ApplicationConfiguration {

@@ -1,5 +1,6 @@
 package tr.com.fazil.data.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +11,7 @@ import java.util.UUID;
 @Setter
 public class KullaniciDto implements Serializable {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Integer id;
 
     private String ad;

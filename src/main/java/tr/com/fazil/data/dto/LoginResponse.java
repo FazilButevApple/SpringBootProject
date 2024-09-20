@@ -1,4 +1,4 @@
-package tr.com.fazil.helper.jwt;
+package tr.com.fazil.data.dto;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -88,27 +88,31 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
-		</dependency>
+		</dependency> <!-- @Valid gibi validasyon anotasyonlarını kullanmak için kullanılır -->
 
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
-			<version>0.11.5</version>
+			<version>0.11.5</version> <!-- Bu bağımlılık, JWT (JSON Web Token) işleme ve oluşturma fonksiyonlarını sağlar.
+										   Bu bağımlılık sadece API'yi sağlar, yani JWT işlemleri için gerekli fonksiyonları içerir ama implementasyonun kendisi burada bulunmaz. -->
 		</dependency>
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-impl</artifactId>
-			<version>0.11.5</version>
+			<version>0.11.5</version> <!-- jjwt-api bağımlılığının sağladığı API'nin gerçek implementasyonunu içerir.
+			 							   JWT oluşturma, imzalama ve doğrulama gibi işlemlerin çalışmasını sağlayan kod burada bulunur. Bu kütüphane, JWT oluşturup imzalarken ya da bir JWT'yi doğrularken kullanılır.
+										   Not: Bu bağımlılık olmadan, sadece API'yi kullanabilir ama işlemleri gerçekleştiremezsin.-->
 		</dependency>
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-jackson</artifactId>
-			<version>0.11.5</version>
+			<version>0.11.5</version> <!-- Bu bağımlılık, JWT'deki JSON nesnelerini serileştirme ve JSON'a dönüştürme işlemlerini yapmak için Jackson kütüphanesini kullanır. -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		</dependency> <!-- Uygulama için kimlik doğrulama (authentication) ve yetkilendirme (authorization) işlemlerini yönetmek için kullanılır.
+						   Örneğin, belirli sayfalara yalnızca yetkili kullanıcıların erişmesini sağlamak, kullanıcı girişini kontrol etmek gibi güvenlik önlemleri bu bağımlılık ile kolayca yapılabilir. -->
 
 	</dependencies>
 

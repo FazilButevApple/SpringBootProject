@@ -11,5 +11,4 @@ public interface KullaniciMapper {
 
     Kullanici toEntity(KullaniciDto kullaniciDto);
 
-
 }
